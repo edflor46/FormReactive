@@ -1,0 +1,132 @@
+<div class="animate__animated animate__fadeInLeft">
+  <h2 class="text-center">Registro</h2>
+  <hr class="col" />
+</div>
+
+<div class="row mb-3 animate__animated animate__fadeInRight background-form">
+  <div class="col">
+    <form (ngSubmit)="submit()" autocomplete="off" [formGroup]="form">
+      <!--Nombre-->
+      <div class="row justify-content-center mt-3 mb-3">
+        <div class="col-sm-10 col-md-8">
+          <label class="col-form-label">Nombre(s): </label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-user-alt"></i
+            ></span>
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control form-control-sm"
+              placeholder="Ingrese su nombre"
+            />
+          </div>
+          <span class="form-text text-danger" *ngIf="camboValidado('nombre')"
+            >Este campo es obligatorio</span
+          >
+        </div>
+      </div>
+
+      <!--Nombre de usuario-->
+      <div class="row justify-content-center mb-3">
+        <div class="col-sm-10 col-md-8">
+          <label class="col-form-label">Nombre de usuario: </label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-id-card"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="nombreUsuario"
+              placeholder="Nuevo nombre de usuario"
+            />
+          </div>
+          <span
+            class="form-text text-danger"
+            *ngIf="camboValidado('nombreUsuario')"
+            >El nombre de usuario debe tener al menos 4 letras</span
+          >
+        </div>
+      </div>
+
+      <!--Correo Electronico-->
+      <div class="row justify-content-center mb-3">
+        <div class="col-sm-10 col-md-8">
+          <label class="col-form-label">Correo Electronico: </label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-envelope"></i
+            ></span>
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control form-control-sm"
+              placeholder="Ingrese un correo electronico"
+            />
+          </div>
+          <span
+          class="form-text text-danger"
+          *ngIf="camboValidado('email')"
+          >Ingrese un correo valido: "ejemplo@dominio.com"</span
+        >
+        </div>
+      </div>
+
+      <!--password-->
+      <div class="row justify-content-center mb-3">
+        <div class="col-sm-10 col-md-8">
+          <label class="col-form-label">Contraseña: </label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-lock"></i
+            ></span>
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control form-control-sm"
+              placeholder="Ingrese una contraseña"
+            />
+          </div>
+          <span
+          class="form-text text-danger"
+          *ngIf="camboValidado('password')"
+          >La contraseña debe tener al menos 5 caracteres</span
+        >
+        </div>
+      </div>
+
+      <!--Confirmar password-->
+      <div class="row justify-content-center mb-3">
+        <div class="col-sm-10 col-md-8">
+          <label class="col-form-label">Confirmar Contraseña: </label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-unlock-alt"></i
+            ></span>
+            <input
+              type="password"
+              formControlName="password2"
+              class="form-control form-control-sm"
+              placeholder="Repetir contraseña"
+            />
+          </div>
+          <span
+          class="form-text text-danger"
+          *ngIf="camboValidado('password2')"
+          >Ambas contraseñas deben ser iguales</span
+        >
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-3">
+        <div class="col-sm-10 col-md-8">
+          <button type="submit" class="float-end btn btn-outline-primary">
+            Registrar
+          </button>
+          <a class="float" routerLink="../login">Iniciar Sesion</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
